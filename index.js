@@ -259,8 +259,8 @@ function getModelYears(inventory) {
 function getOlderCars(inventory, number) {
   let olderCars = []
   for (let i = 0; i < inventory.length; i++) {  
-    if (inventory.car_year < number) {
-      olderCars.push(inventory[i].car_year);
+    if (inventory[i].car_year <= number) {
+      olderCars.push(inventory[i]);
     };
   };
   return olderCars;
@@ -281,9 +281,18 @@ function getGermanCars(inventory) {
   
   let germanCars = []
   for (let i = 0; i < inventory.length; i++) {  
-    if (inventory.car_make === "Audi", "Volkswagen", "BMW") {
+    if (inventory[i].car_make === "Audi") {
       germanCars.push(inventory[i]);
-    };
+    }
+    else if (inventory[i].car_make === "Volkswagen") {
+      germanCars.push(inventory[i]);
+    }
+    else if (inventory[i].car_make === "BMW") {
+      germanCars.push(inventory[i]);
+    }
+    else if(inventory[i].car_make === "Mercedes-Benz") {
+      germanCars.push(inventory[i]);
+    }
   };
   return germanCars;
 
